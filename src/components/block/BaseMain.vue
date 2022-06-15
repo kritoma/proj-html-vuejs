@@ -1,13 +1,16 @@
 <template>
   <main>
     <SectionMusicLife/>
+    <SectionBand/>
   </main>
 </template>
 
 <script>
-import SectionMusicLife from '../section/SectionMusicLife.vue'
+import SectionBand from '../section/SectionBand.vue';
+import SectionMusicLife from '../section/SectionMusicLife.vue';
+
 export default {
-  components: { SectionMusicLife },
+  components: { SectionMusicLife, SectionBand },
     name: "BaseMain",
 }
 </script>
