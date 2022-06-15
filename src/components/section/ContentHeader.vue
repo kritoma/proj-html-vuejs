@@ -42,8 +42,8 @@ export default {
         }
 
         .btn_album {
-            background-color: #eb4b54;
-            border-color: #eb4b54;
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
         }
     }
 }
