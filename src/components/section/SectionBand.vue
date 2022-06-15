@@ -3,13 +3,16 @@
     <div class="container">
         <TitleSection title="Latest Band News"/>
     </div>
+    <DisplayBar text="VIEW ALL LATEST NEWS"/>
   </section>
 </template>
 
 <script>
-import TitleSection from '../common/TitleSection.vue'
+import DisplayBar from '../common/DisplayBar.vue';
+import TitleSection from '../common/TitleSection.vue';
+
 export default {
-  components: { TitleSection },
+  components: { TitleSection, DisplayBar },
     name: "SectionBand"
 }
 </script>

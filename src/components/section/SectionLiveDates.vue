@@ -1,18 +1,22 @@
 <template>
   <section>
     <div class="container">
-        <TitleSection title="Live Dates"/>
-        <CardDates class="list" v-for="(live, index) in liveDates" :key="index" :live="live"/>
+        <div class="live">
+            <TitleSection title="Live Dates"/>
+            <CardDates class="list" v-for="(live, index) in liveDates" :key="index" :live="live"/>
+        </div>
     </div>
+    <DisplayBar text="VIEW ALL LIVES DATES"/>
   </section>
 </template>
 
 <script>
 import CardDates from '../common/CardDates.vue';
+import DisplayBar from '../common/DisplayBar.vue';
 import TitleSection from '../common/TitleSection.vue';
 
 export default {
-  components: { TitleSection, CardDates },
+  components: { TitleSection, CardDates, DisplayBar },
     name: "SectionLiveDates",
 
     data() {
@@ -52,10 +56,15 @@ export default {
 <style lang="scss" scoped>
 section {
     background-color: #252a33;
-    padding: 50px;
+
+    .live {
+        padding: 5rem 0;
+    }
+
 
     .list {
         margin: .625rem 0;
+
     }
     
 }
