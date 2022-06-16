@@ -1,12 +1,12 @@
 <template>
-  <div class="cards">
+  <div class="cards" >
     <div class="dates">
         <i @click="openCurtain(live.visible)" class="fa-solid fa-plus"></i>
         <p>{{live.date}}, {{live.festival}}, {{live.country}}</p>
     </div>
-    <div class="maps" >
+    <div class="maps" :class="{active : visible}">
         <img src="../../assets/img/maps.png" alt="maps">
-        <div class="text_maps" :class="{active : visible}">
+        <div class="text_maps" >
             <h4>Untold Stories</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, dolorum ipsam, nihil possimus illum totam vitae cupiditate voluptatem autem vero praesentium fugiat incidunt saepe et nostrum, esse cum quas beatae!</p>
             <button>BOOK NOW</button>
@@ -20,7 +20,7 @@ export default {
     name: "CardDates",
     props: {
         live: Object,
-        i: Number
+       
     },
     methods: {
         openCurtain(index) {
