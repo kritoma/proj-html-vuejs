@@ -4,7 +4,7 @@
     <p>There is an untold story behind every favorite song.</p>
     <div class="buttons">
         <button class="btn_album">LATEST ALBUM</button>
-        <button>LIVE DATES</button>
+        <button class="btn_live">LIVE DATES</button>
     </div>
   </div>
 </template>
@@ -44,6 +44,11 @@ export default {
         .btn_album {
             background-color: var(--color-primary);
             border-color: var(--color-primary);
+        }
+
+        .btn_live:hover {
+            background-color: white;
+            color: black;
         }
     }
 }

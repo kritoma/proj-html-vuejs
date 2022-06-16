@@ -20,6 +20,11 @@ div {
     text-align: center;
     color: white;
 
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+
     h5 {
         font-size: 14px;
         margin: 0;
