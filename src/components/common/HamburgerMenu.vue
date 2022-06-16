@@ -1,12 +1,63 @@
 <template>
   <div class="hambuger_menu">
-    <i class="fa-solid fa-bars"></i>
+    <i @click="openMenu()" class="fa-solid fa-bars"></i>
+    <div class="open_menu">
+      <div class="top_menu">
+        <img src="../../assets/img/avada-music-logo.png" alt="logo">
+        <i @click="closeMenu()" class="fa-solid fa-xmark"></i>
+      </div>
+      <nav>
+        <ul>
+          <li v-for="(nav, index) in navs" :key="index"><a :href="nav.link">{{nav.name}}</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: "HamburgerMenu"
+    name: "HamburgerMenu",
+    data() {
+        return {
+            navs: [
+                {
+                    name: "Home",
+                    link: "#"
+                },
+                {
+                    name: "Meet The Band",
+                    link: "#"
+                },
+                {
+                    name: "Live Dates",
+                    link: "#"
+                },
+                {
+                    name: "Latest News",
+                    link: "#"
+                },
+                {
+                    name: "Albums",
+                    link: "#"
+                },
+                {
+                    name: "Fans",
+                    link: "#"
+                },
+            ]
+        }
+    },
+
+    methods: {
+      openMenu() {
+        document.querySelector(".open_menu").style.display = "block"
+      },
+
+      closeMenu() {
+        document.querySelector(".open_menu").style.display = "none"
+      }
+    }
 }
 </script>
 
@@ -15,7 +66,56 @@ export default {
     color: white;
 
     i {
-        font-size: 1.50rem;
+        font-size: 2rem;
+    }
+
+    .open_menu {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-primary);
+      color: #f78f99;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+
+      
+
+      .top_menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 3rem;
+
+        i {
+          margin-right: 25px;
+        }
+      }
+
+      nav {
+        text-align: center;
+        
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          list-style: none;
+          gap: 1.5rem;
+          
+
+          a {
+            text-decoration: none;
+            color: #f78f99;
+            font-size: 40px;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
     }
 }
 </style>
