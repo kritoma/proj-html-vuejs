@@ -23,8 +23,8 @@ export default {
        
     },
     methods: {
-        openCurtain(index) {
-           index = !index
+        openCurtain(i) {
+            i = !i
         }
     }
 }
