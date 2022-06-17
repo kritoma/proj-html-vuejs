@@ -68,9 +68,9 @@ section{
 }
 
 .bands {
-  margin: 3.75rem 0;
+  padding: 100px 250px;
   display: grid;
-  gap: .625rem;
+  gap: 1.25rem;
   grid-auto-columns: 1fr;
   grid-template-areas: 
     "uno uno due"

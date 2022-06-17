@@ -21,7 +21,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: calc(100% - 115px);
     color: white;
     gap: 1.875rem;
 
