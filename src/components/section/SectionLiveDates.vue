@@ -3,7 +3,12 @@
     <div class="container">
         <div class="live">
             <TitleSection title="Live Dates"/>
-            <CardDates class="list" v-for="(live, index) in liveDates" :key="index" :live="live" :i="index"/>
+            <CardDates @map="openMap" 
+            class="list" 
+            v-for="(live, index) in liveDates" 
+            :key="index" 
+            :live="live" 
+            :i="index"/>
         </div>
     </div>
     <DisplayBar text="VIEW ALL LIVES DATES"/>
@@ -16,7 +21,7 @@ import DisplayBar from '../common/DisplayBar.vue';
 import TitleSection from '../common/TitleSection.vue';
 
 export default {
-  components: { TitleSection, CardDates, DisplayBar },
+    components: { TitleSection, CardDates, DisplayBar },
     name: "SectionLiveDates",
 
     data() {
@@ -54,7 +59,15 @@ export default {
                 },
             ],
         }
+    },
+
+    methods: {
+        openMap(i) {
+            this.liveDates[i].visible = !this.liveDates[i].visible
+           
+        } 
     }
+
 } 
 </script>
 
@@ -70,7 +83,8 @@ section {
     .list {
         margin: .625rem 0;
 
-    }
-    
+    }   
 }
+ 
+
 </style>

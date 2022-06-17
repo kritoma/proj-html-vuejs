@@ -1,15 +1,17 @@
 <template>
   <div class="cards" >
-    <div class="dates">
-        <i @click="openCurtain(live.visible)" class="fa-solid fa-plus"></i>
+    <div  @click="$emit('map', i)" class="dates">
+        <i class="fa-solid fa-plus"></i>
         <p>{{live.date}}, {{live.festival}}, {{live.country}}</p>
     </div>
-    <div class="maps" :class="{active : visible}">
-        <img src="../../assets/img/maps.png" alt="maps">
-        <div class="text_maps" >
-            <h4>Untold Stories</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, dolorum ipsam, nihil possimus illum totam vitae cupiditate voluptatem autem vero praesentium fugiat incidunt saepe et nostrum, esse cum quas beatae!</p>
-            <button>BOOK NOW</button>
+    <div v-show="live.visible" >
+        <div  class="maps">
+            <img src="../../assets/img/maps.png" alt="maps">
+            <div class="text_maps" >
+                <h4>Untold Stories</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, dolorum ipsam, nihil possimus illum totam vitae cupiditate voluptatem autem vero praesentium fugiat incidunt saepe et nostrum, esse cum quas beatae!</p>
+                <button>BOOK NOW</button>
+            </div>
         </div>
     </div>
   </div>
@@ -20,13 +22,9 @@ export default {
     name: "CardDates",
     props: {
         live: Object,
-       
+        i: Number,
     },
-    methods: {
-        openCurtain(i) {
-            i = !i
-        }
-    }
+    
 }
 </script>
 
@@ -41,6 +39,7 @@ export default {
         align-items: center;
         gap: 1.25rem;
         padding: 10px;
+        cursor: pointer;
     }
 
     p {
@@ -88,11 +87,13 @@ export default {
     
 }
 .maps {
-        padding: 20px;
-        display: none;
-        gap: 4rem;
-}    
+    padding: 20px;
+    gap: 4rem;
+    display: flex;
+   
+} 
 .active {
-            display: flex;
-        }
+    opacity: 1;
+    max-height: 1000px;
+}  
 </style>
