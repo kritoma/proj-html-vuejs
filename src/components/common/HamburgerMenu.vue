@@ -1,7 +1,7 @@
 <template>
   <div class="hambuger_menu">
     <i @click="openMenu()" class="fa-solid fa-bars"></i>
-    <div class="open_menu">
+    <div v-show="isOpen" class="open_menu" >
       <div class="top_menu">
         <img src="../../assets/img/avada-music-logo.png" alt="logo">
         <i @click="closeMenu()" class="fa-solid fa-xmark"></i>
@@ -20,6 +20,7 @@ export default {
     name: "HamburgerMenu",
     data() {
         return {
+            isOpen: false,
             navs: [
                 {
                     name: "Home",
@@ -51,11 +52,11 @@ export default {
 
     methods: {
       openMenu() {
-        document.querySelector(".open_menu").style.display = "block"
+        this.isOpen = true
       },
 
       closeMenu() {
-        document.querySelector(".open_menu").style.display = "none"
+        this.isOpen = false
       }
     }
 }
@@ -78,8 +79,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      display: none;
-
+      
       
 
       .top_menu {
